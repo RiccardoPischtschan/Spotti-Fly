@@ -1,15 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/ac_weiß"
     tools:context=".Account_Fragment">
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="147dp" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/ac_blau"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        tools:text="Folgen" />
+
+    <ImageView
+        android:id="@+id/acc_profil_image_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/account_profil_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/beitraege_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beiträge"
+        android:textColor="@color/ac_dunkel_grau"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_profil_image_account"
+        app:layout_constraintEnd_toStartOf="@+id/acc_profil_image_account"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
+
+    <TextView
+        android:id="@+id/follower_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follower"
+        android:textColor="@color/ac_dunkel_grau"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_profil_image_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/acc_profil_image_account"
+        app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
+
+    <TextView
+        android:id="@+id/counter_beiträge_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ac_dunkel_grau"
+        app:layout_constraintEnd_toEndOf="@+id/beitraege_text"
+        app:layout_constraintStart_toStartOf="@+id/beitraege_text"
+        app:layout_constraintTop_toBottomOf="@+id/beitraege_text"
+        tools:text="318" />
+
+    <TextView
+        android:id="@+id/follower_counter_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ac_dunkel_grau"
+        app:layout_constraintEnd_toEndOf="@+id/follower_text"
+        app:layout_constraintStart_toStartOf="@+id/follower_text"
+        app:layout_constraintTop_toBottomOf="@+id/follower_text"
+        tools:text="5378" />
+
+    <TextView
+        android:id="@+id/user_name_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/ac_dunkel_grau"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/acc_profil_image_account"
+        app:layout_constraintStart_toStartOf="@+id/acc_profil_image_account"
+        app:layout_constraintTop_toBottomOf="@+id/acc_profil_image_account"
+        tools:text="User Name" />
+
+    <ImageView
+        android:id="@+id/option_button_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/more_vert_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/user_name_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/user_name_account"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/user_info_1_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/ac_dunkel_grau"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_account"
+        tools:text="z.B Ort des Users" />
+
+    <TextView
+        android:id="@+id/user_info_2_account"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/ac_dunkel_grau"
+        app:layout_constraintEnd_toEndOf="@+id/user_info_1_account"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/user_info_1_account"
+        app:layout_constraintTop_toBottomOf="@+id/user_info_1_account"
+        tools:text="z.B Alter des Users, oder Hobby" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shadow_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_info_2_account" />
+
+    <Button
+        android:id="@+id/nachricht_button_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/ac_blau"
+        android:text="Nachricht"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/glocke_button_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/alert"
+        app:layout_constraintBottom_toBottomOf="@+id/nachricht_button_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nachricht_button_account" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/beitraege_recycler_account"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nachricht_button_account"
+        tools:itemCount="15"
+        tools:listitem="@layout/beitraege_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

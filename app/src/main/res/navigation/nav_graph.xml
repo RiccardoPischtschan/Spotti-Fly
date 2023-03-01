@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/login_Fragment">
+    app:startDestination="@id/account_Fragment">
     <fragment
         android:id="@+id/home_Fragment"
         android:name="com.example.spottifly.Home_Fragment"
@@ -43,5 +43,14 @@
         android:id="@+id/account_Fragment"
         android:name="com.example.spottifly.Account_Fragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_account_Fragment_to_account_Beitraege_Fragment"
+            app:destination="@id/account_Beitraege_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/account_Beitraege_Fragment"
+        android:name="com.example.spottifly.Account_Beitraege_Fragment"
+        android:label="fragment_account__beitraege"
+        tools:layout="@layout/fragment_account__beitraege" />
 </navigation>
