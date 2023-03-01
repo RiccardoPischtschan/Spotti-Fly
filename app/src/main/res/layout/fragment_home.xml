@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_Fragment">
+
+    <View
+        android:id="@+id/platzhalter_view"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp" />
+
+    <ImageView
+        android:id="@+id/profil_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/account_circle_filled_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/spotti_fly_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+
+    <ImageView
+        android:id="@+id/post_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/mail_outline"
+        app:layout_constraintBottom_toBottomOf="@+id/spotti_fly_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/post_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/platzhalter_view"
+        tools:itemCount="10"
+        tools:listitem="@layout/post_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shadow_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+
+    <ImageView
+        android:id="@+id/spotti_fly_image"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/spotti_fly_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

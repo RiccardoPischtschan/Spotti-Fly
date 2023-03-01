@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Suche_Fragment" >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/ac_dunkel_grau"
+        android:backgroundTint="@color/ac_dunkel_grau"
+        android:hapticFeedbackEnabled="true"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/search_darkmode24px" />
+
+        <ImageView
+            android:id="@+id/name_such_lösch_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/baseline_clear_hell_24" />
+
+        <EditText
+            android:id="@+id/name_such_button"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
+            android:layout_width="259dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/ac_weiß"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/such_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:listitem="@layout/such_item"
+        tools:itemCount="6"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
