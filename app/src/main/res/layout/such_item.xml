@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/acc_profil_image"
+            android:id="@+id/search_profil_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/user_images" />
 
         <TextView
-            android:id="@+id/acc_name"
+            android:id="@+id/search_acc_name"
             android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -38,7 +38,7 @@
             android:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/acc_bilder_recycler"
+            android:id="@+id/search_acc_bilder_recycler"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"

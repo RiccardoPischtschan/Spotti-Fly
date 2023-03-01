@@ -13,27 +13,27 @@
         android:layout_height="54dp" />
 
     <ImageView
-        android:id="@+id/profil_image"
+        android:id="@+id/home_profil_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:src="@drawable/account_circle_filled_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/spotti_fly_image"
+        app:layout_constraintBottom_toBottomOf="@+id/home_spotti_fly_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+        app:layout_constraintTop_toTopOf="@+id/home_spotti_fly_image" />
 
     <ImageView
-        android:id="@+id/post_image"
+        android:id="@+id/home_message_button"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="32dp"
         android:src="@drawable/mail_outline"
-        app:layout_constraintBottom_toBottomOf="@+id/spotti_fly_image"
+        app:layout_constraintBottom_toBottomOf="@+id/home_spotti_fly_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+        app:layout_constraintTop_toTopOf="@+id/home_spotti_fly_image" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/post_recycler"
+        android:id="@+id/home_post_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -47,7 +47,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/shadow_line3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -56,10 +56,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spotti_fly_image" />
+        app:layout_constraintTop_toTopOf="@+id/home_spotti_fly_image" />
 
     <ImageView
-        android:id="@+id/spotti_fly_image"
+        android:id="@+id/home_spotti_fly_image"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="14dp"

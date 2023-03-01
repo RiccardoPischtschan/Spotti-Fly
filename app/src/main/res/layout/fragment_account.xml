@@ -9,7 +9,7 @@
     tools:context=".Account_Fragment">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/acc_follow_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -17,7 +17,7 @@
         android:backgroundTint="@color/ac_blau"
         app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/shadow_line4"
         tools:text="Folgen" />
 
     <ImageView
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/beitraege_text"
+        android:id="@+id/acc_beitraege_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beiträge"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
 
     <TextView
-        android:id="@+id/follower_text"
+        android:id="@+id/acc_follower_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Follower"
@@ -55,27 +55,27 @@
         app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
 
     <TextView
-        android:id="@+id/counter_beiträge_account"
+        android:id="@+id/acc_counter_beiträge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/ac_dunkel_grau"
-        app:layout_constraintEnd_toEndOf="@+id/beitraege_text"
-        app:layout_constraintStart_toStartOf="@+id/beitraege_text"
-        app:layout_constraintTop_toBottomOf="@+id/beitraege_text"
+        app:layout_constraintEnd_toEndOf="@+id/acc_beitraege_text"
+        app:layout_constraintStart_toStartOf="@+id/acc_beitraege_text"
+        app:layout_constraintTop_toBottomOf="@+id/acc_beitraege_text"
         tools:text="318" />
 
     <TextView
-        android:id="@+id/follower_counter_account"
+        android:id="@+id/acc_follower_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/ac_dunkel_grau"
-        app:layout_constraintEnd_toEndOf="@+id/follower_text"
-        app:layout_constraintStart_toStartOf="@+id/follower_text"
-        app:layout_constraintTop_toBottomOf="@+id/follower_text"
+        app:layout_constraintEnd_toEndOf="@+id/acc_follower_text"
+        app:layout_constraintStart_toStartOf="@+id/acc_follower_text"
+        app:layout_constraintTop_toBottomOf="@+id/acc_follower_text"
         tools:text="5378" />
 
     <TextView
-        android:id="@+id/user_name_account"
+        android:id="@+id/acc_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -88,18 +88,18 @@
         tools:text="User Name" />
 
     <ImageView
-        android:id="@+id/option_button_account"
+        android:id="@+id/acc_option_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:src="@drawable/more_vert_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/user_name_account"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_user_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/user_name_account"
+        app:layout_constraintTop_toTopOf="@+id/acc_user_name"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/user_info_1_account"
+        android:id="@+id/acc_user_info_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -109,55 +109,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_account"
+        app:layout_constraintTop_toBottomOf="@+id/acc_user_name"
         tools:text="z.B Ort des Users" />
 
     <TextView
-        android:id="@+id/user_info_2_account"
+        android:id="@+id/acc_user_info_2"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/ac_dunkel_grau"
-        app:layout_constraintEnd_toEndOf="@+id/user_info_1_account"
+        app:layout_constraintEnd_toEndOf="@+id/acc_user_info_1"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/user_info_1_account"
-        app:layout_constraintTop_toBottomOf="@+id/user_info_1_account"
+        app:layout_constraintStart_toStartOf="@+id/acc_user_info_1"
+        app:layout_constraintTop_toBottomOf="@+id/acc_user_info_1"
         tools:text="z.B Alter des Users, oder Hobby" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/shadow_line4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/shadow_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_info_2_account" />
+        app:layout_constraintTop_toBottomOf="@+id/acc_user_info_2" />
 
     <Button
-        android:id="@+id/nachricht_button_account"
+        android:id="@+id/acc_message_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:backgroundTint="@color/ac_blau"
         android:text="Nachricht"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintBottom_toBottomOf="@+id/acc_follow_button"
+        app:layout_constraintStart_toEndOf="@+id/acc_follow_button"
+        app:layout_constraintTop_toTopOf="@+id/acc_follow_button" />
 
     <ImageView
-        android:id="@+id/glocke_button_account"
+        android:id="@+id/acc_glocke_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:src="@drawable/alert"
-        app:layout_constraintBottom_toBottomOf="@+id/nachricht_button_account"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_message_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nachricht_button_account" />
+        app:layout_constraintTop_toTopOf="@+id/acc_message_button" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/beitraege_recycler_account"
+        android:id="@+id/acc_beitraege_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -165,7 +165,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nachricht_button_account"
+        app:layout_constraintTop_toBottomOf="@+id/acc_message_button"
         tools:itemCount="15"
         tools:listitem="@layout/beitraege_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

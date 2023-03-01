@@ -8,7 +8,7 @@
     tools:context=".Suche_Fragment" >
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/search_cardView"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -32,7 +32,7 @@
             android:src="@drawable/search_darkmode24px" />
 
         <ImageView
-            android:id="@+id/name_such_lösch_button"
+            android:id="@+id/name_search_lösch_button"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginLeft="320dp"
@@ -41,7 +41,7 @@
             android:src="@drawable/baseline_clear_hell_24" />
 
         <EditText
-            android:id="@+id/name_such_button"
+            android:id="@+id/name_search_button"
             style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
             android:layout_width="259dp"
             android:layout_height="match_parent"
@@ -63,7 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/search_cardView"
         tools:listitem="@layout/such_item"
         tools:itemCount="6"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
