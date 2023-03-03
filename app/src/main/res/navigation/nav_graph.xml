@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_home_Fragment_to_account_Fragment"
             app:destination="@id/account_Fragment" />
+        <action
+            android:id="@+id/action_home_Fragment_to_kommentar_Fragment"
+            app:destination="@id/kommentar_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/login_Fragment"
@@ -52,5 +55,14 @@
         android:id="@+id/account_Beitraege_Fragment"
         android:name="com.example.spottifly.Account_Beitraege_Fragment"
         android:label="fragment_account__beitraege"
-        tools:layout="@layout/fragment_account__beitraege" />
+        tools:layout="@layout/fragment_account__beitraege" >
+        <action
+            android:id="@+id/action_account_Beitraege_Fragment_to_kommentar_Fragment"
+            app:destination="@id/kommentar_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kommentar_Fragment"
+        android:name="com.example.spottifly.Kommentar_Fragment"
+        android:label="fragment_kommentar"
+        tools:layout="@layout/fragment_kommentar" />
 </navigation>
