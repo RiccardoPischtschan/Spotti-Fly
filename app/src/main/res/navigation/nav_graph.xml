@@ -7,11 +7,11 @@
     <fragment
         android:id="@+id/home_Fragment"
         android:name="com.example.spottifly.Home_Fragment"
-        android:label="fragment_home_"
+        android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_Fragment_to_profil"
-            app:destination="@id/profil" />
+            app:destination="@id/profil_Fragment" />
         <action
             android:id="@+id/action_home_Fragment_to_account_Fragment"
             app:destination="@id/account_Fragment" />
@@ -29,12 +29,12 @@
             app:destination="@id/home_Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/profil"
+        android:id="@+id/profil_Fragment"
         android:name="com.example.spottifly.Profil_Fragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />
     <fragment
-        android:id="@+id/suche"
+        android:id="@+id/suche_Fragment"
         android:name="com.example.spottifly.Suche_Fragment"
         android:label="fragment_suche"
         tools:layout="@layout/fragment_suche" >
