@@ -1,10 +1,7 @@
 package com.example.spottifly
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.spottifly.Adapter.PostAdapter
-import com.example.spottifly.Model.Repository
-import com.example.spottifly.Model.User
+import androidx.appcompat.app.AppCompatActivity
 import com.example.spottifly.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,8 +14,13 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-
+        binding.sucheButton.setOnClickListener {
+            val sucheFragment = Suche_Fragment()
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, sucheFragment).commit()
+        }
+        binding.homeButton.setOnClickListener {
+            val homeFragment = Home_Fragment()
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, homeFragment).commit()
+        }
     }
-
 }

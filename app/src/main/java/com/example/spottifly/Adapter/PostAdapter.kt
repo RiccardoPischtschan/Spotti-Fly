@@ -8,14 +8,17 @@ import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
 
-class PostAdapter(var user: ArrayList<User>) : RecyclerView.Adapter<PostAdapter.UserHolder>() {
+class PostAdapter() : RecyclerView.Adapter<PostAdapter.UserHolder>() {
+
+    private var dataset = listOf<User>()
     class UserHolder(val binding: PostItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
-            binding.homeUserImage.imageAlpha = user.profilImage
+            binding.homeUserImage.setImageResource(user.profilImage)
             binding.homeUserName.text = user.name
-            binding.homeLikeCounterText.text = user.beitraege.like.toString()
+            binding.homeLikeCounterText.text = "${user.beitraege.like} Gefällt es"
             binding.homeAircraftTypText.text = user.beitraege.airplane
             binding.homePostText.text = user.beitraege.bildKommentar
+            binding.homeImageView.setImageResource(user.beitraege.beitragImage)
 
             binding.homeLikeButton.setOnClickListener {
             }
@@ -24,15 +27,19 @@ class PostAdapter(var user: ArrayList<User>) : RecyclerView.Adapter<PostAdapter.
             }
         }
     }
+    fun submitList(list: List<User>) {
+        dataset = list
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {
         val binding = PostItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return UserHolder(binding)
     }
 
     override fun onBindViewHolder(holder: UserHolder, position: Int) {
-        holder.bind(user.get(position))
+        holder.bind(dataset.get(position))
     }
     override fun getItemCount(): Int {
-        return user.size
+        return dataset.size
     }
 }

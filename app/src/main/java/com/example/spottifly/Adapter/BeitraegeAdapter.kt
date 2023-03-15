@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.BeitraegeItemBinding
 
-class BeitaegeAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<BeitaegeAdapter.BeitraegeHolder>() {
+class BeitraegeAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder>() {
 
     class BeitraegeHolder(val binding: BeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(bild: User) {
