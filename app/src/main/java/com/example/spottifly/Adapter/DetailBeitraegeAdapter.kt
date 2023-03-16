@@ -6,12 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.DetailBeitraegeItemBinding
 
-class DetailBeitragAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<DetailBeitragAdapter.DetailBeitragHolder>() {
+class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailBeitragHolder>() {
 
+    private var dataset = listOf<User>()
     class DetailBeitragHolder(val binding: DetailBeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(detail: User) {
+        fun bind(user: User) {
+            binding.detailProfilImage.setImageResource(user.profilImage)
+            binding.detailUserName.text = user.name
+            binding.detailAircraftTypText.text = user.beitraege.airplane
+            binding.detailPostText.text = user.beitraege.bildKommentar
         }
+    }
+    fun submitList(list: List<User>) {
+        dataset = list
+        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailBeitragHolder {
         val binding = DetailBeitraegeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,10 +28,10 @@ class DetailBeitragAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return dataset.size
     }
 
     override fun onBindViewHolder(holder: DetailBeitragHolder, position: Int) {
-        holder.bind(userList.get(position))
+        holder.bind(dataset.get(position))
     }
 }

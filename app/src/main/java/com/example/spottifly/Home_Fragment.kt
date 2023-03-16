@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import com.example.spottifly.Adapter.PostAdapter
 import com.example.spottifly.databinding.FragmentHomeBinding
 
@@ -22,7 +23,6 @@ class Home_Fragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-
         return view
     }
 
@@ -32,6 +32,10 @@ class Home_Fragment : Fragment() {
 
         viewModel.user.observe(viewLifecycleOwner) {
             postAdapter.submitList(it)
+
+            binding.homeProfilButton.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.profil_Fragment)
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.spottifly
 
+import android.app.appsearch.SearchResult
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,5 +25,12 @@ class Suche_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding.searchButton.setOnClickListener {
+
+        }
+
+
     }
 }
+

@@ -1,8 +1,10 @@
 package com.example.spottifly.Adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
 import com.example.spottifly.R
@@ -25,6 +27,12 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.UserHolder>() {
             binding.homeKommentarButton.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment)
             }
+
+            val bundle = Bundle()
+            bundle.putInt("userId", user.id)
+            binding.homeUserImage.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
+            }
         }
     }
     fun submitList(list: List<User>) {
@@ -39,6 +47,7 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.UserHolder>() {
     override fun onBindViewHolder(holder: UserHolder, position: Int) {
         holder.bind(dataset.get(position))
     }
+
     override fun getItemCount(): Int {
         return dataset.size
     }

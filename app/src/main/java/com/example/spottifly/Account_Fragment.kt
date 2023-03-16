@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.spottifly.Adapter.BeitraegeAdapter
 import com.example.spottifly.databinding.FragmentAccountBinding
 
 class Account_Fragment : Fragment() {
@@ -24,5 +25,25 @@ class Account_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val userId = requireArguments().getInt("userId")
+        viewModel.loadAccount(userId)
+
+        val beitraegeAdapter = BeitraegeAdapter()
+        binding.accBeitraegeRecycler.adapter = beitraegeAdapter
+
+        viewModel.user.observe(viewLifecycleOwner) { list ->
+            val user = list.find { it.id == userId }
+
+            viewModel.user.observe(viewLifecycleOwner) {
+                beitraegeAdapter.submitList(it)
+            }
+
+            if (user != null) {
+                binding.accProfilImageAccount.setImageResource(user.profilImage)
+                binding.accUserName.text = user.name
+                binding.accCounterBeitrGe.text = user.beitragZaehler.toString()
+                binding.accFollowerCounter.text = user.follower.toString()
+            }
+        }
     }
 }

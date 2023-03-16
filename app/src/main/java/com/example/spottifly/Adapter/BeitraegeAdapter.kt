@@ -1,17 +1,31 @@
 package com.example.spottifly.Adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
+import com.example.spottifly.R
 import com.example.spottifly.databinding.BeitraegeItemBinding
 
-class BeitraegeAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder>() {
+class BeitraegeAdapter() : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder>() {
 
+    private var dataset = listOf<User>()
     class BeitraegeHolder(val binding: BeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(bild: User) {
-            binding.beitraegeImageAccount.imageAlpha = bild.beitraege.beitragImage
+        fun bind(user: User) {
+            binding.beitraegeImageAccount.setImageResource(user.beitraege.beitragImage)
+
+            val bundle = Bundle()
+            bundle.putInt("accId", user.id)
+            binding.beitraegeImageAccount.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.account_Beitraege_Fragment, bundle)
+            }
         }
+    }
+    fun submitList(list: List<User>) {
+        dataset = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeitraegeHolder {
@@ -20,10 +34,10 @@ class BeitraegeAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<Bei
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return dataset.size
     }
 
     override fun onBindViewHolder(holder: BeitraegeHolder, position: Int) {
-        holder.bind(userList.get(position))
+        holder.bind(dataset.get(position))
     }
 }
