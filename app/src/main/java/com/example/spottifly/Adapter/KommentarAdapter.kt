@@ -10,7 +10,7 @@ class KommentarAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<Kom
 
     class KommentarHolder(val binding: KommentarItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(kommentar: User) {
+        fun bind(user: User) {
         }
     }
 

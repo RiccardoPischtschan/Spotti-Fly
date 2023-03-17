@@ -10,7 +10,7 @@ class SuchAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<SuchAdap
 
     class SuchHolder(val binding: SuchItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(such: User) {
+        fun bind(user: User) {
         }
     }
 

@@ -10,7 +10,7 @@ class SuchBilderAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<Su
 
     class SuchBilderHolder(val binding: SucheBilderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(suchbild: User) {
+        fun bind(user: User) {
         }
     }
 
