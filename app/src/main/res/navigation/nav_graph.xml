@@ -74,5 +74,9 @@
         android:id="@+id/kommentar_Fragment"
         android:name="com.example.spottifly.Kommentar_Fragment"
         android:label="fragment_kommentar"
-        tools:layout="@layout/fragment_kommentar" />
+        tools:layout="@layout/fragment_kommentar" >
+        <argument
+            android:name="kommentarId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

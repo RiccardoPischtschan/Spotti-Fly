@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import com.example.spottifly.Adapter.KommentarAdapter
 import com.example.spottifly.databinding.FragmentKommentarBinding
 
 class Kommentar_Fragment : Fragment() {
@@ -25,6 +26,22 @@ class Kommentar_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val kommentarId = requireArguments().getInt("kommentarId")
+        viewModel.loadKommentar(kommentarId)
+
+        val kommentarAdapter = KommentarAdapter()
+        binding.kommentarRecycler.adapter = kommentarAdapter
+
+        viewModel.user.observe(viewLifecycleOwner) { list ->
+            val user = list.find { it.id == kommentarId }
+
+            if (user != null) {
+                binding.kommentarUserImage.setImageResource(user.profilImage)
+                binding.kommentarUserName.text = user.name
+                binding.kommentarPostText.text = user.beitraege.bildKommentar
+            }
+        }
+
         binding.kommentarBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
         }

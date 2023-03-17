@@ -40,10 +40,10 @@ class Account_Fragment : Fragment() {
                 binding.accCounterBeitrGe.text = user.beitragZaehler.toString()
                 binding.accFollowerCounter.text = user.follower.toString()
             }
+        }
 
-            viewModel.user.observe(viewLifecycleOwner) {
-                beitraegeAdapter.submitList(it)
-            }
+        viewModel.user.observe(viewLifecycleOwner) {
+            beitraegeAdapter.submitList(it)
         }
     }
 }

@@ -23,11 +23,12 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
             binding.homeLikeButton.setOnClickListener {
             }
+            val bundle = Bundle()
+            bundle.putInt("kommentarId", user.id)
             binding.homeKommentarButton.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment)
+                Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment, bundle)
             }
 
-            val bundle = Bundle()
             bundle.putInt("userId", user.id)
             binding.homeUserImage.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)

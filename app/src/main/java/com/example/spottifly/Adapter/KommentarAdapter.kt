@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.KommentarItemBinding
 
-class KommentarAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<KommentarAdapter.KommentarHolder>() {
+class KommentarAdapter() : RecyclerView.Adapter<KommentarAdapter.KommentarHolder>() {
 
+    private var dataset = listOf<User>()
     class KommentarHolder(val binding: KommentarItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(user: User) {
@@ -20,10 +21,10 @@ class KommentarAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<Kom
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return dataset.size
     }
 
     override fun onBindViewHolder(holder: KommentarHolder, position: Int) {
-        holder.bind(userList.get(position))
+        holder.bind(dataset.get(position))
     }
 }
