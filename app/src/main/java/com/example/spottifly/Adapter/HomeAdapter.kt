@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
 
-class PostAdapter() : RecyclerView.Adapter<PostAdapter.UserHolder>() {
+class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
     private var dataset = listOf<User>()
     class UserHolder(val binding: PostItemBinding) : RecyclerView.ViewHolder(binding.root) {

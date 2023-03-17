@@ -34,15 +34,15 @@ class Account_Fragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner) { list ->
             val user = list.find { it.id == userId }
 
-            viewModel.user.observe(viewLifecycleOwner) {
-                beitraegeAdapter.submitList(it)
-            }
-
             if (user != null) {
                 binding.accProfilImageAccount.setImageResource(user.profilImage)
                 binding.accUserName.text = user.name
                 binding.accCounterBeitrGe.text = user.beitragZaehler.toString()
                 binding.accFollowerCounter.text = user.follower.toString()
+            }
+
+            viewModel.user.observe(viewLifecycleOwner) {
+                beitraegeAdapter.submitList(it)
             }
         }
     }

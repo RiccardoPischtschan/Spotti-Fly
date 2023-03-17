@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
-import com.example.spottifly.Adapter.PostAdapter
+import com.example.spottifly.Adapter.HomeAdapter
 import com.example.spottifly.databinding.FragmentHomeBinding
 
 class Home_Fragment : Fragment() {
@@ -27,7 +27,7 @@ class Home_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val postAdapter = PostAdapter()
+        val postAdapter = HomeAdapter()
         binding.homePostRecycler.adapter = postAdapter
 
         viewModel.user.observe(viewLifecycleOwner) {

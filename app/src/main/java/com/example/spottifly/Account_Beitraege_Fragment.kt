@@ -32,9 +32,8 @@ class Account_Beitraege_Fragment : Fragment() {
         val detailBeitragAdapter = DetailBeitragAdapter()
         binding.detailBeitraegeRecycler.adapter = detailBeitragAdapter
 
-        viewModel.user.observe(viewLifecycleOwner) { list ->
-            val user = list.find { it.id == accId }
-        }
+
+        
         viewModel.user.observe(viewLifecycleOwner) {
             detailBeitragAdapter.submitList(it)
         }
