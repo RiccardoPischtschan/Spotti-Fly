@@ -40,6 +40,20 @@ class Account_Fragment : Fragment() {
                 binding.accCounterBeitrGe.text = user.beitragZaehler.toString()
                 binding.accFollowerCounter.text = user.follower.toString()
             }
+            var follower = false
+            if (follower) {
+                binding.accFollowButton.text = "Gefolgt"
+            } else {
+                binding.accFollowButton.text = "Folgen"
+            }
+            binding.accFollowButton.setOnClickListener {
+                follower = !follower
+                if (follower) {
+                    binding.accFollowButton.text = "Folgen"
+                } else {
+                    binding.accFollowButton.text = "Gefolgt"
+                }
+            }
         }
 
         viewModel.user.observe(viewLifecycleOwner) {

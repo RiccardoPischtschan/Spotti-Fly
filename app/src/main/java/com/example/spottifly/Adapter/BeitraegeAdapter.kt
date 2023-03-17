@@ -13,6 +13,7 @@ class BeitraegeAdapter() : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder
 
     private var dataset = listOf<User>()
     class BeitraegeHolder(val binding: BeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(user: User) {
             binding.beitraegeImageAccount.setImageResource(user.beitraege.beitragImage)
 

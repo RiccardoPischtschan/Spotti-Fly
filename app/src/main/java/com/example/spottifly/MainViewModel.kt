@@ -25,6 +25,6 @@ class MainViewModel : ViewModel() {
         _user.value?.find { it.id == id }
     }
     fun loadKommentar(id: Int) {
-        _user.value?.find { it.id == id}
+        _user.value?.find { it.id == id }
     }
 }

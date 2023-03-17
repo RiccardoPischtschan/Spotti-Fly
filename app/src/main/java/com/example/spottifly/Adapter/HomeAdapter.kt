@@ -1,5 +1,6 @@
 package com.example.spottifly.Adapter
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -32,6 +33,15 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
             bundle.putInt("userId", user.id)
             binding.homeUserImage.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
+            }
+            var isLiked = false
+            binding.homeLikeButton.setOnClickListener {
+                isLiked = !isLiked
+                if (isLiked) {
+                    binding.homeLikeButton.setImageResource(R.drawable.heart)
+                } else {
+                    binding.homeLikeButton.setImageResource(R.drawable.heartfull)
+                }
             }
         }
     }
