@@ -3,6 +3,7 @@ package com.example.spottifly.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.DetailBeitraegeItemBinding
 

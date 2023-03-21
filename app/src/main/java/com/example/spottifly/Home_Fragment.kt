@@ -36,6 +36,9 @@ class Home_Fragment : Fragment() {
             binding.homeProfilButton.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.profil_Fragment)
             }
+            binding.homeSearchButton.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
+            }
         }
     }
 }
