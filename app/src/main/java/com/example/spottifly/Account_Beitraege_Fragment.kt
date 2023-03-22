@@ -27,7 +27,6 @@ class Account_Beitraege_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val accId = requireArguments().getInt("accId")
-        viewModel.loadAccountBeitrag(accId)
 
         val detailBeitragAdapter = DetailBeitragAdapter()
         binding.detailBeitraegeRecycler.adapter = detailBeitragAdapter

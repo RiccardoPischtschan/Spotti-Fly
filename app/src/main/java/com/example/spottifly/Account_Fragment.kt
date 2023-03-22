@@ -27,7 +27,6 @@ class Account_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val userId = requireArguments().getInt("userId")
-        viewModel.loadAccount(userId)
 
         val beitraegeAdapter = BeitraegeAdapter()
         binding.accBeitraegeRecycler.adapter = beitraegeAdapter

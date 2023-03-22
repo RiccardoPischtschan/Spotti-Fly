@@ -22,14 +22,4 @@ class MainViewModel : ViewModel() {
     init {
         _user.value = repository.userList()
     }
-
-    fun loadAccount(id: Int) {
-        _user.value?.find { it.id == id }
-    }
-    fun loadAccountBeitrag(id: Int) {
-        _user.value?.find { it.id == id }
-    }
-    fun loadKommentar(id: Int) {
-        _user.value?.find { it.id == id }
-    }
 }
