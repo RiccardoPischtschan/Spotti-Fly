@@ -82,7 +82,7 @@
         android:id="@+id/home_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/add_24px"
         app:layout_constraintBottom_toBottomOf="@+id/home_home_button"
         app:layout_constraintEnd_toEndOf="@+id/view"
@@ -96,14 +96,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/home_add_button"
         app:layout_constraintStart_toEndOf="@+id/home_search_button"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <ImageView
         android:id="@+id/home_search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:src="@drawable/search_24px"
         app:layout_constraintBottom_toBottomOf="@+id/home_home_button"
         app:layout_constraintStart_toStartOf="@+id/view"
