@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import com.example.spottifly.databinding.FragmentSucheBinding
 
 class Suche_Fragment : Fragment() {
@@ -28,6 +29,12 @@ class Suche_Fragment : Fragment() {
 
         binding.searchButton.setOnClickListener {
 
+        }
+        binding.searchHomeButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
+        }
+        binding.searchSearchButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
         }
 
 

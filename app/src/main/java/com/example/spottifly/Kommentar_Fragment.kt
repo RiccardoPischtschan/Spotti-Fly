@@ -45,5 +45,11 @@ class Kommentar_Fragment : Fragment() {
         binding.kommentarBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
         }
+        binding.kommentarHomeButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
+        }
+        binding.kommentarSearchButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
+        }
     }
 }

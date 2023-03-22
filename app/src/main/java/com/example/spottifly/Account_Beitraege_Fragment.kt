@@ -32,13 +32,17 @@ class Account_Beitraege_Fragment : Fragment() {
         val detailBeitragAdapter = DetailBeitragAdapter()
         binding.detailBeitraegeRecycler.adapter = detailBeitragAdapter
 
-
-        
         viewModel.user.observe(viewLifecycleOwner) {
             detailBeitragAdapter.submitList(it)
         }
         binding.detailBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
+        }
+        binding.detailHomeButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
+        }
+        binding.detailSearchButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
         }
     }
 }

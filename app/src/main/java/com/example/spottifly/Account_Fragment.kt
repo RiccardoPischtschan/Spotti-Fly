@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import com.example.spottifly.Adapter.BeitraegeAdapter
 import com.example.spottifly.databinding.FragmentAccountBinding
 
@@ -58,6 +59,12 @@ class Account_Fragment : Fragment() {
 
         viewModel.user.observe(viewLifecycleOwner) {
             beitraegeAdapter.submitList(it)
+        }
+        binding.accHomeButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
+        }
+        binding.accSearchButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
         }
     }
 }

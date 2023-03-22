@@ -28,5 +28,11 @@ class Profil_Fragment : Fragment() {
         binding.profilBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
         }
+        binding.profilHomeButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
+        }
+        binding.profilSearchButton.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
+        }
     }
 }
