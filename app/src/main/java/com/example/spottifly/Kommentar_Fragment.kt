@@ -28,7 +28,6 @@ class Kommentar_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val kommentarId = requireArguments().getInt("kommentarId")
 
-
         val kommentarAdapter = KommentarAdapter()
         binding.kommentarRecycler.adapter = kommentarAdapter
 
