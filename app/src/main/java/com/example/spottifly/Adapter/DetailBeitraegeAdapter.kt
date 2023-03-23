@@ -9,18 +9,21 @@ import com.example.spottifly.databinding.DetailBeitraegeItemBinding
 
 class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailBeitragHolder>() {
 
-    private var dataset = listOf<User>()
+    private var dataset = listOf<Beitrag>()
+    lateinit var account: User
     class DetailBeitragHolder(val binding: DetailBeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) {
-            binding.detailProfilImage.setImageResource(user.profilImage)
-            binding.detailUserName.text = user.name
-            binding.detailAircraftTypText.text = user.beitraege.airplane
-            binding.detailPostText.text = user.beitraege.bildKommentar
+        fun bind(beitrag: Beitrag, account: User) {
+            binding.detailProfilImage.setImageResource(account.profilImage)
+            binding.detailUserName.text = account.name
+            binding.detailAircraftTypText.text = beitrag.airplane
+            binding.detailPostText.text = beitrag.bildKommentar
+            binding.detailImage.setImageResource(beitrag.beitragImage)
         }
     }
-    fun submitList(list: List<User>) {
-        dataset = list
+    fun submitUser(user: User) {
+        dataset = user.beitraege
+        account = user
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailBeitragHolder {
@@ -33,6 +36,6 @@ class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailB
     }
 
     override fun onBindViewHolder(holder: DetailBeitragHolder, position: Int) {
-        holder.bind(dataset.get(position))
+        holder.bind(dataset.get(position), account)
     }
 }

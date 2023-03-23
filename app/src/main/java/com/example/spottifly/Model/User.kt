@@ -8,7 +8,6 @@ data class User(
     val profilImage: Int,
     val follower: Int,
     val chat: MutableList<String>,
-    val beitragZaehler: Int,
-    val beitraege: Beitrag
+    val beitraege: MutableList<Beitrag>
 
 )

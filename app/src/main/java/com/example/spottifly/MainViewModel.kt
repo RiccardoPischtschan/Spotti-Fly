@@ -15,11 +15,19 @@ class MainViewModel : ViewModel() {
     val user: LiveData<List<User>>
         get() = _user
 
-    private val _beitraege = MutableLiveData<List<Beitrag>>()
-    val beitraege: LiveData<List<Beitrag>>
+    private val _beitraege = MutableLiveData<MutableList<Beitrag>>()
+    val beitraege: LiveData<MutableList<Beitrag>>
         get() = _beitraege
+
+    private val _account = MutableLiveData<User>()
+    val account: LiveData<User>
+        get() = _account
 
     init {
         _user.value = repository.userList()
+    }
+
+    fun setAccount(user: User) {
+        _account.value = user
     }
 }

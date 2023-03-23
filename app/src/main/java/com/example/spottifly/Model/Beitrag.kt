@@ -7,4 +7,5 @@ data class Beitrag(
     val airplane: String,
     val bildKommentar: String,
     val kommentare: MutableList<String>
+
 )

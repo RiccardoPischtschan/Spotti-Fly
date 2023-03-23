@@ -1,6 +1,7 @@
 package com.example.spottifly
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,18 +28,19 @@ class Account_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val userId = requireArguments().getInt("userId")
-        //viewModel.loadBeitraege(userId)
+        // viewModel.loadBeitraege(userId)
 
         val beitraegeAdapter = BeitraegeAdapter()
         binding.accBeitraegeRecycler.adapter = beitraegeAdapter
 
         viewModel.user.observe(viewLifecycleOwner) { list ->
             val user = list.find { it.id == userId }
+            viewModel.setAccount(user!!)
 
             if (user != null) {
                 binding.accProfilImageAccount.setImageResource(user.profilImage)
                 binding.accUserName.text = user.name
-                binding.accCounterBeitrGe.text = user.beitragZaehler.toString()
+                binding.accCounterBeitrGe.text = user.beitraege.size.toString()
                 binding.accFollowerCounter.text = user.follower.toString()
             }
             var follower = false
@@ -57,8 +59,9 @@ class Account_Fragment : Fragment() {
             }
         }
 
-        viewModel.user.observe(viewLifecycleOwner) {
-            beitraegeAdapter.submitList(it)
+        viewModel.account.observe(viewLifecycleOwner) {
+            beitraegeAdapter.submitUser(it)
+            Log.d("userInfo", viewModel.user.value.toString())
         }
         binding.accHomeButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)

@@ -1,31 +1,31 @@
 package com.example.spottifly.Adapter
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.BeitraegeItemBinding
 
 class BeitraegeAdapter() : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder>() {
 
-    private var dataset = listOf<User>()
+    private var dataset = listOf<Beitrag>()
+    private lateinit var account: User
     class BeitraegeHolder(val binding: BeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) {
-            binding.beitraegeImageAccount.setImageResource(user.beitraege.beitragImage)
+        fun bind(beitrag: Beitrag) {
+            binding.beitraegeImageAccount.setImageResource(beitrag.beitragImage)
 
-            val bundle = Bundle()
-            bundle.putInt("accId", user.id)
             binding.beitraegeImageAccount.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.account_Beitraege_Fragment, bundle)
+                Navigation.findNavController(binding.root).navigate(R.id.account_Beitraege_Fragment)
             }
         }
     }
-    fun submitList(list: List<User>) {
-        dataset = list
+    fun submitUser(user: User) {
+        dataset = user.beitraege
+        account = user
         notifyDataSetChanged()
     }
 

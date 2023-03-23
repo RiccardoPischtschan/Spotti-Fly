@@ -37,7 +37,7 @@ class Kommentar_Fragment : Fragment() {
             if (user != null) {
                 binding.kommentarUserImage.setImageResource(user.profilImage)
                 binding.kommentarUserName.text = user.name
-                binding.kommentarPostText.text = user.beitraege.bildKommentar
+              //  binding.kommentarPostText.text = user.beitraege.bildKommentar
             }
         }
 
