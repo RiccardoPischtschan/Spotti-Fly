@@ -65,7 +65,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
     }
 
     override fun onBindViewHolder(holder: UserHolder, position: Int) {
-        holder.bind(beitragList.get(position),userList.get(position))
+        holder.bind(beitragList.get(position), userList.get(position))
     }
 
     override fun getItemCount(): Int {
