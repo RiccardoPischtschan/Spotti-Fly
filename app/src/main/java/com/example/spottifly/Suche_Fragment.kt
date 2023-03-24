@@ -1,6 +1,5 @@
 package com.example.spottifly
 
-import android.app.appsearch.SearchResult
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,9 +25,10 @@ class Suche_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         binding.searchButton.setOnClickListener {
-
+            val term = binding.nameSearchEdit.text.toString()
+            viewModel.search(term)
+            binding.nameSearchEdit.setText("")
         }
         binding.searchHomeButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
@@ -36,8 +36,5 @@ class Suche_Fragment : Fragment() {
         binding.searchSearchButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.suche_Fragment)
         }
-
-
     }
 }
-

@@ -30,4 +30,8 @@ class MainViewModel : ViewModel() {
     fun setAccount(user: User) {
         _account.value = user
     }
+
+    fun search(term: String) {
+
+    }
 }
