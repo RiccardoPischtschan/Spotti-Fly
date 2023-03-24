@@ -17,7 +17,6 @@ class Kommentar_Fragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
     private lateinit var beitrag: Beitrag
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,17 +36,15 @@ class Kommentar_Fragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner) { list ->
             val user = list.find { it.id == kommentarId }
 
-
             if (user != null) {
                 binding.kommentarUserImage.setImageResource(user.profilImage)
                 binding.kommentarUserName.text = user.name
-               // binding.kommentarPostText.text =
+                // binding.kommentarPostText.text =
             }
         }
         viewModel.account.observe(viewLifecycleOwner) {
             kommentarAdapter.submitUser(it)
         }
-
 
         binding.kommentarBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
