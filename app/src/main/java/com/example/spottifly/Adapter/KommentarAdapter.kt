@@ -3,18 +3,25 @@ package com.example.spottifly.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.KommentarItemBinding
 
 class KommentarAdapter() : RecyclerView.Adapter<KommentarAdapter.KommentarHolder>() {
 
-    private var dataset = listOf<User>()
+    private var dataset = listOf<Beitrag>()
+    private lateinit var account: User
     class KommentarHolder(val binding: KommentarItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) {
+        fun bind(beitrag: Beitrag) {
+            binding.kommentarKommentarText.text = beitrag.kommentare.toString()
         }
     }
-
+    fun submitUser(user: User) {
+        dataset = user.beitraege
+        account = user
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KommentarHolder {
         val binding = KommentarItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return KommentarHolder(binding)

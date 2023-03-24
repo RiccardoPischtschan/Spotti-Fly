@@ -8,14 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.spottifly.Adapter.DetailBeitragAdapter
-import com.example.spottifly.Model.User
 import com.example.spottifly.databinding.FragmentAccountBeitraegeBinding
 
 class Account_Beitraege_Fragment : Fragment() {
     private var _binding: FragmentAccountBeitraegeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by activityViewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,8 +26,6 @@ class Account_Beitraege_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-       // val accId = requireArguments().getInt("accId")
-
         val detailBeitragAdapter = DetailBeitragAdapter()
         binding.detailBeitraegeRecycler.adapter = detailBeitragAdapter
 

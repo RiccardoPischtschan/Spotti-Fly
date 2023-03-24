@@ -30,7 +30,7 @@
         tools:text="Name des Users" />
 
     <TextView
-        android:id="@+id/kommentar_text_recycler"
+        android:id="@+id/kommentar_kommentar_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -59,7 +59,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kommentar_text_recycler"
+        app:layout_constraintTop_toBottomOf="@+id/kommentar_kommentar_text"
         app:srcCompat="@drawable/message_left"
         tools:layout_editor_absoluteX="279dp" />
 

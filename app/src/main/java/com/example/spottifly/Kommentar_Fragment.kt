@@ -8,12 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.spottifly.Adapter.KommentarAdapter
+import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.databinding.FragmentKommentarBinding
 
 class Kommentar_Fragment : Fragment() {
     private var _binding: FragmentKommentarBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by activityViewModels()
+    private lateinit var beitrag: Beitrag
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,12 +37,17 @@ class Kommentar_Fragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner) { list ->
             val user = list.find { it.id == kommentarId }
 
+
             if (user != null) {
                 binding.kommentarUserImage.setImageResource(user.profilImage)
                 binding.kommentarUserName.text = user.name
-              //  binding.kommentarPostText.text = user.beitraege.bildKommentar
+               // binding.kommentarPostText.text =
             }
         }
+        viewModel.account.observe(viewLifecycleOwner) {
+            kommentarAdapter.submitUser(it)
+        }
+
 
         binding.kommentarBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()

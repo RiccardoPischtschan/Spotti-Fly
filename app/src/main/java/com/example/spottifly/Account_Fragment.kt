@@ -1,7 +1,6 @@
 package com.example.spottifly
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +27,6 @@ class Account_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val userId = requireArguments().getInt("userId")
-        // viewModel.loadBeitraege(userId)
 
         val beitraegeAdapter = BeitraegeAdapter()
         binding.accBeitraegeRecycler.adapter = beitraegeAdapter
@@ -61,7 +59,7 @@ class Account_Fragment : Fragment() {
 
         viewModel.account.observe(viewLifecycleOwner) {
             beitraegeAdapter.submitUser(it)
-            Log.d("userInfo", viewModel.user.value.toString())
+            // Log.d("userInfo", viewModel.user.value.toString())
         }
         binding.accHomeButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.home_Fragment)
