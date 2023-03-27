@@ -78,5 +78,8 @@
         <argument
             android:name="kommentarId"
             app:argType="integer" />
+        <argument
+            android:name="beitragId"
+            app:argType="integer" />
     </fragment>
 </navigation>

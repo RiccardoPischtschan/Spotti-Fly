@@ -29,6 +29,7 @@ class Kommentar_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val kommentarId = requireArguments().getInt("kommentarId")
+        val beitragId = requireArguments().getInt("beitragId")
 
         val kommentarAdapter = KommentarAdapter()
         binding.kommentarRecycler.adapter = kommentarAdapter
@@ -39,7 +40,14 @@ class Kommentar_Fragment : Fragment() {
             if (user != null) {
                 binding.kommentarUserImage.setImageResource(user.profilImage)
                 binding.kommentarUserName.text = user.name
-                // binding.kommentarPostText.text =
+            }
+        }
+
+        viewModel.beitraege.observe(viewLifecycleOwner) { list ->
+            val beitrag = list.find { it.id == beitragId }
+
+            if (beitrag != null) {
+                binding.kommentarPostText.text = beitrag.bildKommentar
             }
         }
         viewModel.account.observe(viewLifecycleOwner) {

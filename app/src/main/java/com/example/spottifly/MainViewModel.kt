@@ -23,6 +23,10 @@ class MainViewModel : ViewModel() {
     val account: LiveData<User>
         get() = _account
 
+    private val _searchResults = MutableLiveData<List<User>?>(repository.userList().shuffled())
+    val searchResult: MutableLiveData<List<User>?>
+        get() = _searchResults
+
     init {
         _user.value = repository.userList()
     }
@@ -32,6 +36,13 @@ class MainViewModel : ViewModel() {
     }
 
     fun search(term: String) {
+        val filterList = _searchResults.value?.filter {
+            it.name.contains(term)
+        }
+        _searchResults.value = filterList
+    }
+    fun resetList(){
+         _searchResults.value = repository.userList()
 
     }
 }

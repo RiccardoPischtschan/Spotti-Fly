@@ -27,6 +27,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
             }
             val bundle = Bundle()
             bundle.putInt("kommentarId", user.id)
+            bundle.putInt("beitragId", beitrag.id)
             binding.homeKommentarButton.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment, bundle)
             }
@@ -35,6 +36,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
             binding.homeUserImage.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
             }
+
             var isLiked = false
             binding.homeLikeButton.setOnClickListener {
                 isLiked = !isLiked

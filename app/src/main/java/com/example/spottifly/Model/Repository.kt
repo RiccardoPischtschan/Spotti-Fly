@@ -3,6 +3,7 @@ package com.example.spottifly.Model
 import com.example.spottifly.R
 
 class Repository {
+
     fun userList(): List<User> {
         return listOf(
             User(
@@ -15,6 +16,7 @@ class Repository {
                 mutableListOf(""),
                 mutableListOf(
                     Beitrag(
+                        1,
                         R.drawable.whatsapp_image_2022_09_29_at_14_13_2,
                         20,
                         "München",
@@ -23,6 +25,7 @@ class Repository {
                         mutableListOf("Super", "Schön")
                     ),
                     Beitrag(
+                        2,
                         R.drawable.mini_flieger,
                         30,
                         "München",
@@ -42,6 +45,7 @@ class Repository {
                 mutableListOf(""),
                 mutableListOf(
                     Beitrag(
+                        3,
                         R.drawable.whatsapp_image_2022_09_29_at_13_46_1,
                         50,
                         "München",
