@@ -20,7 +20,7 @@ class SuchAdapter() : RecyclerView.Adapter<SuchAdapter.SuchHolder>() {
             val bundle = Bundle()
             bundle.putInt("userId", user.id)
             binding.searchAccName.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.account_Fragment,bundle)
+                Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
             }
         }
     }
