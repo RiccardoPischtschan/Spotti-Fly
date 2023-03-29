@@ -41,8 +41,7 @@ class MainViewModel : ViewModel() {
         }
         _searchResults.value = filterList
     }
-    fun resetList(){
-         _searchResults.value = repository.userList()
-
+    fun resetList() {
+        _searchResults.value = repository.userList()
     }
 }

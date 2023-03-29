@@ -22,6 +22,8 @@ class SuchAdapter() : RecyclerView.Adapter<SuchAdapter.SuchHolder>() {
             binding.searchAccName.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
             }
+
+            binding.searchAccBilderRecycler.adapter = SuchBilderAdapter()
         }
     }
 

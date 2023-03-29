@@ -3,14 +3,15 @@ package com.example.spottifly.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spottifly.Model.User
+import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.databinding.SucheBilderItemBinding
 
-class SuchBilderAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<SuchBilderAdapter.SuchBilderHolder>() {
-
+class SuchBilderAdapter() : RecyclerView.Adapter<SuchBilderAdapter.SuchBilderHolder>() {
+    private var beitragList = listOf<Beitrag>()
     class SuchBilderHolder(val binding: SucheBilderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) {
+        fun bind(beitrag: Beitrag) {
+            binding.searchAccUploads.setImageResource(beitrag.beitragImage)
         }
     }
 
@@ -20,10 +21,10 @@ class SuchBilderAdapter(var userList: ArrayList<User>) : RecyclerView.Adapter<Su
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return beitragList.size
     }
 
     override fun onBindViewHolder(holder: SuchBilderHolder, position: Int) {
-        holder.bind(userList.get(position))
+        holder.bind(beitragList.get(position))
     }
 }
