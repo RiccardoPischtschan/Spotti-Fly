@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home_Fragment">
+    app:startDestination="@id/startFragment">
     <fragment
         android:id="@+id/home_Fragment"
         android:name="com.example.spottifly.Home_Fragment"
@@ -81,5 +81,17 @@
         <argument
             android:name="beitragId"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.spottifly.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_home_Fragment"
+            app:destination="@id/home_Fragment" />
+        <action
+            android:id="@+id/action_startFragment_to_login_Fragment"
+            app:destination="@id/login_Fragment" />
     </fragment>
 </navigation>
