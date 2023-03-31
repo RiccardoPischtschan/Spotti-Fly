@@ -27,6 +27,6 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(R.id.home_Fragment)
-        },5000)
+        }, 7000)
     }
 }
