@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     private val repository = Repository()
-    private val weatherRepository = WeatherRepository()
+    private val weatherRepository = WeatherRepository(WetherApi)
 
     private val _user = MutableLiveData<List<User>>()
     val user: LiveData<List<User>>
