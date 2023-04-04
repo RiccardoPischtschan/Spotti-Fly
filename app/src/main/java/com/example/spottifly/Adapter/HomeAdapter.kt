@@ -1,30 +1,42 @@
 package com.example.spottifly.Adapter
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.PopupWindow
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
+import com.example.spottifly.popUpFragment
+
 
 class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
     private var beitragList = listOf<Beitrag>()
     private var userList = listOf<User>()
+
     class UserHolder(val binding: PostItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(beitrag: Beitrag, user: User) {
             binding.homeUserImage.setImageResource(user.profilImage)
             binding.homeUserName.text = user.name
             binding.homeLikeCounterText.text = "${beitrag.like} Gefällt es"
             binding.homeAircraftTypText.text = beitrag.airplane
+            binding.homeStandort.text = beitrag.airport
             binding.homePostText.text = beitrag.bildKommentar
             binding.homeImageView.setImageResource(beitrag.beitragImage)
 
-            binding.homeLikeButton.setOnClickListener {
+            binding.homeStandort.setOnClickListener {
+          //      val showPopUp = popUpFragment()
+           //     showPopUp.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp")
             }
+
             val bundle = Bundle()
             bundle.putInt("kommentarId", user.id)
             bundle.putInt("beitragId", beitrag.id)
