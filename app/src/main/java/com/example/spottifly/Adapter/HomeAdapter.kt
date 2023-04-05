@@ -1,20 +1,16 @@
 package com.example.spottifly.Adapter
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.PopupWindow
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
-import com.example.spottifly.popUpFragment
-
 
 class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
@@ -33,9 +29,12 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
             binding.homeImageView.setImageResource(beitrag.beitragImage)
 
             binding.homeStandort.setOnClickListener {
-          //      val showPopUp = popUpFragment()
-           //     showPopUp.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp")
+               val nav = findNavController(itemView)
+                //
+
             }
+
+
 
             val bundle = Bundle()
             bundle.putInt("kommentarId", user.id)
@@ -59,6 +58,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
                 }
             }
         }
+
     }
     fun submitList(list: List<User>) {
         var postList: MutableList<Beitrag> = mutableListOf()
@@ -80,6 +80,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
     override fun onBindViewHolder(holder: UserHolder, position: Int) {
         holder.bind(beitragList.get(position), userList.get(position))
+
     }
 
     override fun getItemCount(): Int {

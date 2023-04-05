@@ -1,10 +1,11 @@
 package com.example.spottifly.Api
 
-import retrofit2.Call
-import retrofit2.Retrofit
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
+class WeatherRepository(private val api: WeatherApi) {
 
-class WeatherRepository (private val api: WeatherApi){
-    private val _weather
-
+    private val _weatherData = MutableLiveData<WeatherData>()
+    val weatherData: LiveData<WeatherData>
+        get() = _weatherData
 }
