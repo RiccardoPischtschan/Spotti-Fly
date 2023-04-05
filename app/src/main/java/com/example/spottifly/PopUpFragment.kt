@@ -12,23 +12,16 @@ class PopUpFragment : DialogFragment(R.layout.fragment_pop_up) {
     private var _binding: FragmentPopUpBinding? = null
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NO_FRAME, androidx.appcompat.R.style.Base_Theme_AppCompat_Dialog)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPopUpBinding.inflate(inflater, container, false)
-
-        val view = binding.root
-        return view
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    }
-    fun onClose() {
-        dismiss()
+        return inflater.inflate(R.layout.fragment_pop_up, container, false)
     }
 }

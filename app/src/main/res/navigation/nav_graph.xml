@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_home_Fragment_to_kommentar_Fragment"
             app:destination="@id/kommentar_Fragment" />
+        <action
+            android:id="@+id/action_home_Fragment_to_navigation_dialog_fragment"
+            app:destination="@id/navigation_dialog_fragment" />
     </fragment>
     <fragment
         android:id="@+id/login_Fragment"
@@ -69,6 +72,9 @@
         <argument
             android:name="accId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_account_Beitraege_Fragment_to_navigation_dialog_fragment"
+            app:destination="@id/navigation_dialog_fragment" />
     </fragment>
     <fragment
         android:id="@+id/kommentar_Fragment"
@@ -94,4 +100,11 @@
             android:id="@+id/action_startFragment_to_login_Fragment"
             app:destination="@id/login_Fragment" />
     </fragment>
+    <dialog
+        android:id="@+id/navigation_dialog_fragment"
+        android:name="com.example.spottifly.PopUpFragment"
+        tools:layout="@layout/fragment_pop_up">
+
+    </dialog>
+
 </navigation>

@@ -1,14 +1,15 @@
 package com.example.spottifly.Adapter
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spottifly.Home_Fragment
 import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
+import com.example.spottifly.PopUpFragment
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
 
@@ -29,12 +30,9 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
             binding.homeImageView.setImageResource(beitrag.beitragImage)
 
             binding.homeStandort.setOnClickListener {
-               val nav = findNavController(itemView)
-                //
-
+                val nav = findNavController(itemView)
+                nav.navigate(R.id.action_home_Fragment_to_navigation_dialog_fragment)
             }
-
-
 
             val bundle = Bundle()
             bundle.putInt("kommentarId", user.id)
@@ -58,7 +56,6 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
                 }
             }
         }
-
     }
     fun submitList(list: List<User>) {
         var postList: MutableList<Beitrag> = mutableListOf()
@@ -80,7 +77,6 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
     override fun onBindViewHolder(holder: UserHolder, position: Int) {
         holder.bind(beitragList.get(position), userList.get(position))
-
     }
 
     override fun getItemCount(): Int {
