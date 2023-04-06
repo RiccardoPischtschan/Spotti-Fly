@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import coil.load
+import com.bumptech.glide.Glide
 import com.example.spottifly.Api.WeatherApi
 import com.example.spottifly.databinding.FragmentPopUpBinding
 import kotlinx.coroutines.launch
@@ -33,10 +33,8 @@ class PopUpFragment : DialogFragment(R.layout.fragment_pop_up) {
                 var temp = data.main.temp - 273.15
                 val round = String.format("%.1f", temp)
                 binding.textTemperature.text = "$round °C"
-                val uri = data.weather[0].icon.toUri().buildUpon().scheme("https").build()
-                binding.imageWeatherIcon.load(uri) {
-                    crossfade(true)
-                }
+                val weatherIconUrl = "https://openweathermap.org/img/w/${data?.weather?.get(0)?.icon}.png" // URL für das Wettersymbol erstellen
+                Glide.with(requireContext()).load(weatherIconUrl).into(binding.imageWeatherIcon)
             }
         }
     }
