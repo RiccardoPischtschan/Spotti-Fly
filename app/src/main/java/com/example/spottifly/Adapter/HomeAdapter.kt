@@ -30,7 +30,7 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
 
             binding.homeStandort.setOnClickListener {
                 val nav = findNavController(itemView)
-                changeCity( beitrag.airport)
+                changeCity(beitrag.airport)
                 nav.navigate(Home_FragmentDirections.actionHomeFragmentToNavigationDialogFragment(beitrag.airport))
             }
 

@@ -28,7 +28,7 @@ class Repository {
                         2,
                         R.drawable.mini_flieger,
                         30,
-                        "Dresden",
+                        "Madrid",
                         "Cessna",
                         "Mini Flieger im V1 abgestellt",
                         mutableListOf()
