@@ -32,7 +32,7 @@ class Home_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val postAdapter = HomeAdapter()
+        val postAdapter = HomeAdapter(viewModel.changeCity)
         binding.homePostRecycler.adapter = postAdapter
 
         viewModel.user.observe(viewLifecycleOwner) {

@@ -105,6 +105,9 @@
         android:name="com.example.spottifly.PopUpFragment"
         tools:layout="@layout/fragment_pop_up">
 
+        <argument
+            android:name="airport"
+            app:argType="string" />
     </dialog>
 
 </navigation>

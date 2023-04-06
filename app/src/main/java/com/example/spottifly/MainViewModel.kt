@@ -16,7 +16,7 @@ class MainViewModel : ViewModel() {
     private val weatherRepository = WeatherRepository(WeatherApi)
 
     val weatherData: LiveData<WeatherData> = weatherRepository.weatherData
-
+    var currentCity: String = ""
     private val _user = MutableLiveData<List<User>>()
     val user: LiveData<List<User>>
         get() = _user
@@ -49,5 +49,8 @@ class MainViewModel : ViewModel() {
     }
     fun resetList() {
         _searchResults.value = repository.userList()
+    }
+    val changeCity: (String) -> Unit = {
+        currentCity = it
     }
 }
