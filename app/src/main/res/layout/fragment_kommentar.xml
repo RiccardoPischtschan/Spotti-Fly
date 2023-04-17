@@ -65,7 +65,7 @@
         tools:text="Name des Users" />
 
     <TextView
-        android:id="@+id/kommentar_post_text"
+        android:id="@+id/kommentarPostText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -84,7 +84,7 @@
         android:background="@color/ac_dunkel_grau"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kommentar_post_text" />
+        app:layout_constraintTop_toBottomOf="@+id/kommentarPostText" />
 
     <EditText
         android:id="@+id/kommentar_text_edit"

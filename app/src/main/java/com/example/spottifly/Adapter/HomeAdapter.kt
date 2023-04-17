@@ -27,6 +27,15 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             binding.homeStandort.text = beitrag.airport
             binding.homePostText.text = beitrag.bildKommentar
             binding.homeImageView.setImageResource(beitrag.beitragImage)
+            if (beitrag.isLike) {
+                binding.homeLikeButton.setImageResource(R.drawable.heartfull)
+
+                binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
+            } else {
+                binding.homeLikeButton.setImageResource(R.drawable.heart)
+
+                binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
+            }
 
             binding.homeStandort.setOnClickListener {
                 val nav = findNavController(itemView)
@@ -35,8 +44,9 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             }
 
             val bundle = Bundle()
-            bundle.putInt("kommentarId", user.id)
             bundle.putInt("beitragId", beitrag.id)
+            bundle.putInt("kommentarId", user.id)
+
             binding.homeKommentarButton.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment, bundle)
             }
@@ -46,13 +56,17 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
                 Navigation.findNavController(binding.root).navigate(R.id.account_Fragment, bundle)
             }
 
-            var isLiked = false
             binding.homeLikeButton.setOnClickListener {
-                isLiked = !isLiked
-                if (isLiked) {
-                    binding.homeLikeButton.setImageResource(R.drawable.heart)
-                } else {
+                beitrag.isLike = !beitrag.isLike
+
+                if (beitrag.isLike) {
                     binding.homeLikeButton.setImageResource(R.drawable.heartfull)
+                    beitrag.like += 1
+                    binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
+                } else {
+                    binding.homeLikeButton.setImageResource(R.drawable.heart)
+                    beitrag.like -= 1
+                    binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
                 }
             }
         }
@@ -67,7 +81,7 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             }
         }
         userList = userPostList
-        beitragList = postList
+        beitragList = postList.shuffled()
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {

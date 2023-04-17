@@ -19,13 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/search_profil_image"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_profil_card"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/user_images" />
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:id="@+id/search_profil_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/user_images" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/search_acc_name"

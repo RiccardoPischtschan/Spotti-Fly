@@ -22,7 +22,7 @@ class Repository {
                         "München",
                         "319",
                         "Ein 319ner beim Duschen",
-                        mutableListOf("Super", "Schön")
+                        mutableListOf()
                     ),
                     Beitrag(
                         2,

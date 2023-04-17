@@ -1,6 +1,7 @@
 package com.example.spottifly
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,14 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.spottifly.Adapter.KommentarAdapter
-import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.databinding.FragmentKommentarBinding
 
 class Kommentar_Fragment : Fragment() {
     private var _binding: FragmentKommentarBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by activityViewModels()
-    private lateinit var beitrag: Beitrag
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,16 +39,15 @@ class Kommentar_Fragment : Fragment() {
             if (user != null) {
                 binding.kommentarUserImage.setImageResource(user.profilImage)
                 binding.kommentarUserName.text = user.name
+                val beitrag = user.beitraege.find { it.id == beitragId }
+                if (beitrag != null) {
+                    binding.kommentarPostText.text = beitrag.bildKommentar
+                } else {
+                    binding.kommentarPostText.text = " Text not Found"
+                }
             }
         }
 
-        viewModel.beitraege.observe(viewLifecycleOwner) { list ->
-            val beitrag = list.find { it.id == beitragId }
-
-            if (beitrag != null) {
-                binding.kommentarPostText.text = beitrag.bildKommentar
-            }
-        }
         viewModel.account.observe(viewLifecycleOwner) {
             kommentarAdapter.submitUser(it)
         }

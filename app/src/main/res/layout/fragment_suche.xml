@@ -38,12 +38,11 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="50dp"
             android:ems="10"
+            android:hint="Suche"
             android:inputType="textPersonName"
-            android:text="Suche"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/ac_weiß"
-            android:textSize="20sp"
-            tools:text="Suche" />
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView

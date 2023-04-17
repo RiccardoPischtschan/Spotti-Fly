@@ -1,10 +1,13 @@
 package com.example.spottifly.Adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.Model.User
+import com.example.spottifly.R
 import com.example.spottifly.databinding.DetailBeitraegeItemBinding
 
 class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailBeitragHolder>() {
@@ -19,6 +22,13 @@ class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailB
             binding.detailAircraftTypText.text = beitrag.airplane
             binding.detailPostText.text = beitrag.bildKommentar
             binding.detailImage.setImageResource(beitrag.beitragImage)
+
+            val bundle = Bundle()
+            bundle.putInt("kommentarId", account.id)
+            bundle.putInt("beitragId", beitrag.id)
+            binding.detailKommentarButton.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment,bundle)
+            }
         }
     }
     fun submitUser(user: User) {

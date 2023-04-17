@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spottifly.Model.Beitrag
 import com.example.spottifly.databinding.SucheBilderItemBinding
 
-class SuchBilderAdapter() : RecyclerView.Adapter<SuchBilderAdapter.SuchBilderHolder>() {
-    private var beitragList = listOf<Beitrag>()
+class SuchBilderAdapter(var beitragList: List<Beitrag>) : RecyclerView.Adapter<SuchBilderAdapter.SuchBilderHolder>() {
+
     class SuchBilderHolder(val binding: SucheBilderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag) {

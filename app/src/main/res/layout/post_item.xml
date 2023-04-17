@@ -19,7 +19,6 @@
             android:id="@+id/home_user_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="centerCrop"
             app:srcCompat="@drawable/user_images" />
     </androidx.cardview.widget.CardView>
 
@@ -87,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/home_kommentar_button"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/heart" />
+        app:srcCompat="@drawable/heartfull" />
 
     <TextView
         android:id="@+id/home_aircraft_typ_text"

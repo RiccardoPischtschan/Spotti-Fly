@@ -36,7 +36,7 @@ class Home_Fragment : Fragment() {
         binding.homePostRecycler.adapter = postAdapter
 
         viewModel.user.observe(viewLifecycleOwner) {
-            postAdapter.submitList(it)
+            postAdapter.submitList(it.shuffled())
 
             binding.homeProfilButton.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.profil_Fragment)
