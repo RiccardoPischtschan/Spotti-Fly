@@ -19,16 +19,23 @@
         app:layout_constraintTop_toBottomOf="@+id/shadow_line4"
         tools:text="Folgen" />
 
-    <ImageView
-        android:id="@+id/acc_profil_image_account"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/acc_image_card"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/account_profil_image"
+        app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/acc_profil_image_account"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/account_profil_image" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/acc_beitraege_text"
@@ -37,10 +44,10 @@
         android:text="Beiträge"
         android:textColor="@color/ac_dunkel_grau"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/acc_profil_image_account"
-        app:layout_constraintEnd_toStartOf="@+id/acc_profil_image_account"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_image_card"
+        app:layout_constraintEnd_toStartOf="@+id/acc_image_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
+        app:layout_constraintTop_toTopOf="@+id/acc_image_card" />
 
     <TextView
         android:id="@+id/acc_follower_text"
@@ -49,10 +56,10 @@
         android:text="Follower"
         android:textColor="@color/ac_dunkel_grau"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/acc_profil_image_account"
+        app:layout_constraintBottom_toBottomOf="@+id/acc_image_card"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/acc_profil_image_account"
-        app:layout_constraintTop_toTopOf="@+id/acc_profil_image_account" />
+        app:layout_constraintStart_toEndOf="@+id/acc_image_card"
+        app:layout_constraintTop_toTopOf="@+id/acc_image_card" />
 
     <TextView
         android:id="@+id/acc_counter_beiträge"
@@ -82,9 +89,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/ac_dunkel_grau"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/acc_profil_image_account"
-        app:layout_constraintStart_toStartOf="@+id/acc_profil_image_account"
-        app:layout_constraintTop_toBottomOf="@+id/acc_profil_image_account"
+        app:layout_constraintEnd_toEndOf="@+id/acc_image_card"
+        app:layout_constraintStart_toStartOf="@+id/acc_image_card"
+        app:layout_constraintTop_toBottomOf="@+id/acc_image_card"
         tools:text="User Name" />
 
     <ImageView
@@ -208,4 +215,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/acc_home_button"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/acc_home_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ class Repository {
                 mutableListOf(
                     Beitrag(
                         1,
-                        R.drawable.whatsapp_image_2022_09_29_at_14_13_2,
+                        R.drawable.ac_1,
                         20,
                         "München",
                         "319",
@@ -26,7 +26,7 @@ class Repository {
                     ),
                     Beitrag(
                         2,
-                        R.drawable.mini_flieger,
+                        R.drawable.ac_3,
                         30,
                         "Madrid",
                         "Cessna",
@@ -46,7 +46,7 @@ class Repository {
                 mutableListOf(
                     Beitrag(
                         3,
-                        R.drawable.whatsapp_image_2022_09_29_at_13_46_1,
+                        R.drawable.ac_2,
                         50,
                         "München",
                         "747",
@@ -54,8 +54,67 @@ class Repository {
                         mutableListOf("Geil", "Schön")
                     )
                 )
+            ),
+            User(
+                3,
+                "Sascha",
+                "sascha@gmail.com",
+                "7464683738",
+                R.drawable.sascha,
+                10,
+                mutableListOf(""),
+                mutableListOf(
+                    Beitrag(
+                        4,
+                        R.drawable.ac_4,
+                        345,
+                        "London",
+                        "787-300",
+                        "Ne 787 mit Star Wars Lackierung",
+                        mutableListOf()
+                    )
+                )
+            ),
+            User(
+                4,
+                "Flieger Karl",
+                "karl@gmail.com",
+                "645878997",
+                R.drawable.karl,
+                76,
+                mutableListOf(""),
+                mutableListOf(
+                    Beitrag(
+                        5,
+                        R.drawable.ac_5,
+                        264,
+                        "Frankfurt",
+                        "380",
+                        "Lufthansa 380 auf den weg zur Rollbahn",
+                        mutableListOf()
+                    )
+                )
+            ),
+            User(
+                5,
+                "Hanna",
+                "hanna@gmail.com",
+                "Hanna_ist_die_beste",
+                R.drawable.hanna,
+                298,
+                mutableListOf(""),
+                mutableListOf(
+                    Beitrag(
+                        6,
+                        R.drawable.ac_6,
+                        89,
+                        "München",
+                        "340-600",
+                        "Mein erster 340er als Ramp Agent",
+                        mutableListOf()
+                    )
+                )
             )
-
         )
     }
 }
