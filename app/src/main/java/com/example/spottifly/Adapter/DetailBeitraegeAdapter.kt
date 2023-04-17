@@ -22,12 +22,32 @@ class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailB
             binding.detailAircraftTypText.text = beitrag.airplane
             binding.detailPostText.text = beitrag.bildKommentar
             binding.detailImage.setImageResource(beitrag.beitragImage)
+            if (beitrag.isLike) {
+                binding.detailLikeButton.setImageResource(R.drawable.heartfull)
+                binding.detailLikeCounterText.text = "${beitrag.like} Gefällt es"
+            } else {
+                binding.detailLikeButton.setImageResource(R.drawable.heart)
+                binding.detailLikeCounterText.text = "${beitrag.like} Gefällt es"
+            }
 
             val bundle = Bundle()
             bundle.putInt("kommentarId", account.id)
             bundle.putInt("beitragId", beitrag.id)
             binding.detailKommentarButton.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment,bundle)
+                Navigation.findNavController(binding.root).navigate(R.id.kommentar_Fragment, bundle)
+            }
+            binding.detailLikeButton.setOnClickListener {
+                beitrag.isLike = !beitrag.isLike
+
+                if (beitrag.isLike) {
+                    binding.detailLikeButton.setImageResource(R.drawable.heartfull)
+                    beitrag.like += 1
+                    binding.detailLikeCounterText.text = "${beitrag.like} Gefällt es"
+                } else {
+                    binding.detailLikeButton.setImageResource(R.drawable.heart)
+                    beitrag.like -= 1
+                    binding.detailLikeCounterText.text = "${beitrag.like} Gefällt es"
+                }
             }
         }
     }

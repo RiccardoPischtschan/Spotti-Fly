@@ -39,20 +39,25 @@ class Account_Fragment : Fragment() {
                 binding.accProfilImageAccount.setImageResource(user.profilImage)
                 binding.accUserName.text = user.name
                 binding.accCounterBeitrGe.text = user.beitraege.size.toString()
-                binding.accFollowerCounter.text = user.follower.toString()
-            }
-            var follower = false
-            if (follower) {
-                binding.accFollowButton.text = "Gefolgt"
-            } else {
-                binding.accFollowButton.text = "Folgen"
-            }
-            binding.accFollowButton.setOnClickListener {
-                follower = !follower
-                if (follower) {
-                    binding.accFollowButton.text = "Folgen"
+
+                if (user.follow) {
+                    binding.accFollowButton.text = "Gefolgen"
+                    binding.accFollowerCounter.text = "${user.follower}"
                 } else {
-                    binding.accFollowButton.text = "Gefolgt"
+                    binding.accFollowButton.text = "Folgen"
+                    binding.accFollowerCounter.text = "${user.follower}"
+                }
+                binding.accFollowButton.setOnClickListener {
+                    user.follow = !user.follow
+                    if (user.follow) {
+                        user.follower -= 1
+                        binding.accFollowButton.text = "Folgen"
+                        binding.accFollowerCounter.text = "${user.follower}"
+                    } else {
+                        user.follower += 1
+                        binding.accFollowButton.text = "Gefolgt"
+                        binding.accFollowerCounter.text = "${user.follower}"
+                    }
                 }
             }
         }

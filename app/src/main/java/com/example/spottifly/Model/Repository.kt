@@ -17,7 +17,7 @@ class Repository {
                 mutableListOf(
                     Beitrag(
                         1,
-                        R.drawable.ac_1,
+                        R.drawable.ac_2,
                         20,
                         "München",
                         "319",
@@ -46,7 +46,7 @@ class Repository {
                 mutableListOf(
                     Beitrag(
                         3,
-                        R.drawable.ac_2,
+                        R.drawable.ac_1,
                         50,
                         "München",
                         "747",
@@ -115,6 +115,6 @@ class Repository {
                     )
                 )
             )
-        )
+        ).shuffled()
     }
 }

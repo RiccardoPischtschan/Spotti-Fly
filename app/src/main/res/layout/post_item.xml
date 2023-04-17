@@ -19,6 +19,7 @@
             android:id="@+id/home_user_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/user_images" />
     </androidx.cardview.widget.CardView>
 

@@ -29,11 +29,9 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             binding.homeImageView.setImageResource(beitrag.beitragImage)
             if (beitrag.isLike) {
                 binding.homeLikeButton.setImageResource(R.drawable.heartfull)
-
                 binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
             } else {
                 binding.homeLikeButton.setImageResource(R.drawable.heart)
-
                 binding.homeLikeCounterText.text = "${beitrag.like } Gefällt es"
             }
 
@@ -81,7 +79,7 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             }
         }
         userList = userPostList
-        beitragList = postList.shuffled()
+        beitragList = postList
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {
