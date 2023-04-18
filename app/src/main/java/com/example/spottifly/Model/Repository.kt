@@ -51,7 +51,7 @@ class Repository {
                         "München",
                         "747",
                         "Das ist eine 747 in freier Wildbahn",
-                        mutableListOf("Geil", "Schön")
+                        mutableListOf()
                     )
                 )
             ),
