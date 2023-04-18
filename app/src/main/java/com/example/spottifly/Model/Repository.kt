@@ -13,7 +13,7 @@ class Repository {
                 "FliegenFetzt",
                 R.drawable.profilbild,
                 50,
-                mutableListOf(""),
+                mutableListOf(),
                 mutableListOf(
                     Beitrag(
                         1,
@@ -42,7 +42,7 @@ class Repository {
                 "FetzFliege",
                 R.drawable.account_profil_image,
                 180,
-                mutableListOf(""),
+                mutableListOf(),
                 mutableListOf(
                     Beitrag(
                         3,
@@ -62,7 +62,7 @@ class Repository {
                 "7464683738",
                 R.drawable.sascha,
                 10,
-                mutableListOf(""),
+                mutableListOf(),
                 mutableListOf(
                     Beitrag(
                         4,
@@ -82,7 +82,7 @@ class Repository {
                 "645878997",
                 R.drawable.karl,
                 76,
-                mutableListOf(""),
+                mutableListOf(),
                 mutableListOf(
                     Beitrag(
                         5,
@@ -102,7 +102,7 @@ class Repository {
                 "Hanna_ist_die_beste",
                 R.drawable.hanna,
                 298,
-                mutableListOf(""),
+                mutableListOf(),
                 mutableListOf(
                     Beitrag(
                         6,

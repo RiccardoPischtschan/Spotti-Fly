@@ -29,6 +29,24 @@
         app:layout_constraintStart_toEndOf="@+id/kommentar_back_button"
         app:layout_constraintTop_toTopOf="@+id/kommentar_back_button" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/kommentar_image_card"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <ImageView
+            android:id="@+id/kommentar_user_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/account_profil_image" />
+    </androidx.cardview.widget.CardView>
+
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"
@@ -39,29 +57,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kommentar_text" />
 
-    <ImageView
-        android:id="@+id/kommentar_user_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/account_profil_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
     <TextView
         android:id="@+id/kommentar_user_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="24dp"
         android:textAlignment="center"
         android:textColor="@color/ac_dunkel_grau"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/kommentar_user_image"
+        app:layout_constraintBottom_toBottomOf="@+id/kommentar_image_card"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kommentar_user_image"
-        app:layout_constraintTop_toTopOf="@+id/kommentar_user_image"
+        app:layout_constraintStart_toEndOf="@+id/kommentar_image_card"
+        app:layout_constraintTop_toTopOf="@+id/kommentar_image_card"
         tools:text="Name des Users" />
 
     <TextView
@@ -71,6 +79,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textColor="@color/ac_dunkel_grau"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kommentar_user_name"
@@ -94,6 +103,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
+        android:hint="Kommentar Schreiben"
         android:inputType="textPersonName"
         android:textColor="@color/ac_dunkel_grau"
         android:textSize="16sp"
@@ -161,4 +171,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/kommentar_home_button"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/kommentar_home_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

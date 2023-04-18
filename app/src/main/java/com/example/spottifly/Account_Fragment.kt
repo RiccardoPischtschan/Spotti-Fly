@@ -50,12 +50,12 @@ class Account_Fragment : Fragment() {
                 binding.accFollowButton.setOnClickListener {
                     user.follow = !user.follow
                     if (user.follow) {
-                        user.follower -= 1
-                        binding.accFollowButton.text = "Folgen"
-                        binding.accFollowerCounter.text = "${user.follower}"
-                    } else {
                         user.follower += 1
                         binding.accFollowButton.text = "Gefolgt"
+                        binding.accFollowerCounter.text = "${user.follower}"
+                    } else {
+                        user.follower -= 1
+                        binding.accFollowButton.text = "Folgen"
                         binding.accFollowerCounter.text = "${user.follower}"
                     }
                 }
