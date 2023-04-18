@@ -36,7 +36,7 @@ class Suche_Fragment : Fragment() {
         }
         binding.searchButton.setOnClickListener {
             viewModel.resetList()
-            val term = binding.nameSearchEdit.text.toString()
+            val term = binding.nameSearchEdit.text.toString().uppercase()
             viewModel.search(term)
             binding.nameSearchEdit.setText("")
         }

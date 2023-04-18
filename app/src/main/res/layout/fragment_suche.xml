@@ -39,6 +39,7 @@
             android:layout_marginLeft="50dp"
             android:ems="10"
             android:hint="Suche"
+            android:textColorHint="@color/ac_weiß"
             android:inputType="textPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/ac_weiß"

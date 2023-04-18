@@ -43,7 +43,7 @@ class MainViewModel : ViewModel() {
 
     fun search(term: String) {
         val filterList = _searchResults.value?.filter {
-            it.name.contains(term)
+            it.name.uppercase().contains(term)
         }
         _searchResults.value = filterList
     }
