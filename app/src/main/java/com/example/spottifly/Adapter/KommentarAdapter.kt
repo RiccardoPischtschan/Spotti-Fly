@@ -11,7 +11,8 @@ class KommentarAdapter() : RecyclerView.Adapter<KommentarAdapter.KommentarHolder
 
     private var dataset = listOf<Beitrag>()
     private lateinit var account: User
-    class KommentarHolder(val binding: KommentarItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class KommentarHolder(val binding: KommentarItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag) {
             binding.kommentarKommentarText.text = beitrag.kommentare.toString()
@@ -23,7 +24,11 @@ class KommentarAdapter() : RecyclerView.Adapter<KommentarAdapter.KommentarHolder
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KommentarHolder {
-        val binding = KommentarItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = KommentarItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return KommentarHolder(binding)
     }
 

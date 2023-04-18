@@ -46,7 +46,9 @@ class Home_Fragment : Fragment() {
             }
             binding.homeMessageButton.setOnClickListener {
                 lifecycleScope.launch {
-                    val weatherData: Response<WeatherData> = WeatherApi.retrofitService.getWeatherData("München", "9dbc456b1289a8b7e39ce517b5f9ef2a")
+                    val weatherData: Response<WeatherData> = WeatherApi
+                        .retrofitService
+                        .getWeatherData("München", "9dbc456b1289a8b7e39ce517b5f9ef2a")
                     println(weatherData.body().toString())
                 }
             }

@@ -14,7 +14,8 @@ class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailB
 
     private var dataset = listOf<Beitrag>()
     lateinit var account: User
-    class DetailBeitragHolder(val binding: DetailBeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class DetailBeitragHolder(val binding: DetailBeitraegeItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag, account: User) {
             binding.detailProfilImage.setImageResource(account.profilImage)
@@ -57,7 +58,11 @@ class DetailBeitragAdapter() : RecyclerView.Adapter<DetailBeitragAdapter.DetailB
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailBeitragHolder {
-        val binding = DetailBeitraegeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = DetailBeitraegeItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return DetailBeitragHolder(binding)
     }
 

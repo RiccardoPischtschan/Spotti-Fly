@@ -33,7 +33,7 @@ class PopUpFragment : DialogFragment(R.layout.fragment_pop_up) {
                 var temp = data.main.temp - 273.15
                 val round = String.format("%.1f", temp)
                 binding.textTemperature.text = "$round °C"
-                val weatherIconUrl = "https://openweathermap.org/img/w/${data.weather[0].icon}.png" // URL für das Wettersymbol erstellen
+                val weatherIconUrl = "https://openweathermap.org/img/w/${data.weather[0].icon}.png"
                 Glide.with(requireContext()).load(weatherIconUrl).into(binding.imageWeatherIcon)
             }
         }

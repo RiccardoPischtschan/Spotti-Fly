@@ -12,12 +12,14 @@ import com.example.spottifly.Model.User
 import com.example.spottifly.R
 import com.example.spottifly.databinding.PostItemBinding
 
-class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerView.Adapter<HomeAdapter.UserHolder>() {
+class HomeAdapter(private var changeCity: ((city: String) -> Unit)) :
+    RecyclerView.Adapter<HomeAdapter.UserHolder>() {
 
     private var beitragList = listOf<Beitrag>()
     private var userList = listOf<User>()
 
-    class UserHolder(val binding: PostItemBinding, var changeCity: ((city: String) -> Unit)) : RecyclerView.ViewHolder(binding.root) {
+    class UserHolder(val binding: PostItemBinding, var changeCity: ((city: String) -> Unit)) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag, user: User) {
             binding.homeUserImage.setImageResource(user.profilImage)
@@ -38,7 +40,10 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
             binding.homeStandort.setOnClickListener {
                 val nav = findNavController(itemView)
                 changeCity(beitrag.airport)
-                nav.navigate(Home_FragmentDirections.actionHomeFragmentToNavigationDialogFragment(beitrag.airport))
+                nav.navigate(
+                    Home_FragmentDirections
+                        .actionHomeFragmentToNavigationDialogFragment(beitrag.airport)
+                )
             }
 
             val bundle = Bundle()
@@ -83,7 +88,11 @@ class HomeAdapter(private var changeCity: ((city: String) -> Unit)) : RecyclerVi
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {
-        val binding = PostItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = PostItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return UserHolder(binding, changeCity)
     }
 
