@@ -24,7 +24,6 @@ class Profil_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         binding.profilBackButton.setOnClickListener {
             Navigation.findNavController(binding.root).navigateUp()
         }
