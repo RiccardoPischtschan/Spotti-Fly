@@ -13,7 +13,8 @@ class BeitraegeAdapter() : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder
 
     private var dataset = listOf<Beitrag>()
     private lateinit var account: User
-    class BeitraegeHolder(val binding: BeitraegeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class BeitraegeHolder(val binding: BeitraegeItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag) {
             binding.beitraegeImageAccount.setImageResource(beitrag.beitragImage)
@@ -30,7 +31,11 @@ class BeitraegeAdapter() : RecyclerView.Adapter<BeitraegeAdapter.BeitraegeHolder
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeitraegeHolder {
-        val binding = BeitraegeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = BeitraegeItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return BeitraegeHolder(binding)
     }
 
