@@ -15,7 +15,6 @@ class KommentarAdapter() : RecyclerView.Adapter<KommentarAdapter.KommentarHolder
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beitrag: Beitrag) {
-            binding.kommentarKommentarText.text = beitrag.kommentare.toString()
         }
     }
     fun submitUser(user: User) {
