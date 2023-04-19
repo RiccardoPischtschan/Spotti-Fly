@@ -49,7 +49,8 @@ class Repository {
                         30,
                         "München",
                         "340-600",
-                        "Mein Feierabend Flieger. Noch schnell den 340 gepusht. ;) #MUC #340-600 #Airbus",
+                        "Mein Feierabend Flieger. Noch schnell den 340 gepusht." +
+                            " ;) #MUC #340-600 #Airbus",
                         mutableListOf()
                     ),
                     Beitrag(
@@ -58,7 +59,8 @@ class Repository {
                         411,
                         "München",
                         "787-Dreamliner",
-                        "Der Dreamliner von Etihad mit sonderlackierung. #Etihad #Dreamliner",
+                        "Der Dreamliner von Etihad mit sonderlackierung." +
+                            " #Etihad #Dreamliner",
                         mutableListOf()
                     ),
                     Beitrag(
@@ -67,7 +69,8 @@ class Repository {
                         45,
                         "München",
                         "787-Dreamliner",
-                        "Air Canada Dreamliner aus dem Enteiser Fotografiert. #Dreamliner #AirCanada #MUC",
+                        "Air Canada Dreamliner aus dem Enteiser Fotografiert." +
+                            " #Dreamliner #AirCanada #MUC",
                         mutableListOf()
                     ),
                     Beitrag(
@@ -76,7 +79,8 @@ class Repository {
                         396,
                         "München",
                         "CRJ-700",
-                        "Die CRJ abholen vom Tribwerkstestaus der Lärmschutzhalle. #CRJ #München #Aircraft",
+                        "Die CRJ abholen vom Tribwerkstestaus der Lärmschutzhalle." +
+                            " #CRJ #München #Aircraft",
                         mutableListOf()
                     )
                 )
@@ -139,7 +143,8 @@ class Repository {
                         264,
                         "Frankfurt",
                         "380",
-                        "Lufthansa 380 auf den weg zur Rollbahn. #Airbus #FRA #380 #Lufthansa",
+                        "Lufthansa 380 auf den weg zur Rollbahn. #Airbus #FRA #380" +
+                            " #Lufthansa",
                         mutableListOf()
                     )
                 )
