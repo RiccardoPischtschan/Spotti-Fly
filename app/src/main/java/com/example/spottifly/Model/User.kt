@@ -7,7 +7,7 @@ data class User(
     val passwort: String,
     val profilImage: Int,
     var follower: Int,
-    val chat: MutableList<String>,
+    val userInfo: String,
     val beitraege: MutableList<Beitrag>,
     var follow: Boolean = false
 

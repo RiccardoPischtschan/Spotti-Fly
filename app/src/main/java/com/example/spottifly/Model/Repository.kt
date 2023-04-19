@@ -13,7 +13,7 @@ class Repository {
                 "FliegenFetzt",
                 R.drawable.profilbild,
                 50,
-                mutableListOf(),
+                "Mitarbeiter bei der EFM am MUC.",
                 mutableListOf(
                     Beitrag(
                         1,
@@ -87,7 +87,7 @@ class Repository {
                 "FetzFliege",
                 R.drawable.account_profil_image,
                 180,
-                mutableListOf(),
+                "Hobbyfotograf",
                 mutableListOf(
                     Beitrag(
                         3,
@@ -107,7 +107,7 @@ class Repository {
                 "7464683738",
                 R.drawable.sascha,
                 10,
-                mutableListOf(),
+                "Spotting ist mein Hobby.",
                 mutableListOf(
                     Beitrag(
                         4,
@@ -127,7 +127,7 @@ class Repository {
                 "645878997",
                 R.drawable.karl,
                 76,
-                mutableListOf(),
+                "Pilot",
                 mutableListOf(
                     Beitrag(
                         5,
@@ -147,7 +147,7 @@ class Repository {
                 "Hanna_ist_die_beste",
                 R.drawable.hanna,
                 298,
-                mutableListOf(),
+                "Ich bin Ramp Agent am MUC.",
                 mutableListOf(
                     Beitrag(
                         6,
@@ -167,7 +167,7 @@ class Repository {
                 "carla 187",
                 R.drawable.carla,
                 187,
-                mutableListOf(),
+                "Ich arbeite als Fluglotse in Dubai.",
                 mutableListOf(
                     Beitrag(
                         7,
