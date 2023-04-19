@@ -8,6 +8,7 @@ data class User(
     val profilImage: Int,
     var follower: Int,
     val userInfo: String,
+    val userInfo2: String,
     val beitraege: MutableList<Beitrag>,
     var follow: Boolean = false
 

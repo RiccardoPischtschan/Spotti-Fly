@@ -39,7 +39,8 @@ class Account_Fragment : Fragment() {
                 binding.accProfilImageAccount.setImageResource(user.profilImage)
                 binding.accUserName.text = user.name
                 binding.accCounterBeitrGe.text = user.beitraege.size.toString()
-                binding.accUserInfo1.text = " ${user.userInfo} "
+                binding.accUserInfo1.text = user.userInfo
+                binding.accUserInfo2.text = user.userInfo2
 
                 if (user.follow) {
                     binding.accFollowButton.text = "Gefolgen"

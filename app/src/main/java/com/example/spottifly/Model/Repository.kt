@@ -14,6 +14,7 @@ class Repository {
                 R.drawable.profilbild,
                 50,
                 "Mitarbeiter bei der EFM am MUC.",
+                "Ich bin Alt und meine Hobbys sind Spotting und Zocken.",
                 mutableListOf(
                     Beitrag(
                         1,
@@ -88,6 +89,7 @@ class Repository {
                 R.drawable.account_profil_image,
                 180,
                 "Hobbyfotograf",
+                "24",
                 mutableListOf(
                     Beitrag(
                         3,
@@ -108,6 +110,7 @@ class Repository {
                 R.drawable.sascha,
                 10,
                 "Spotting ist mein Hobby.",
+                "Ich Reise gern und endecke gern neue Orte",
                 mutableListOf(
                     Beitrag(
                         4,
@@ -128,6 +131,7 @@ class Repository {
                 R.drawable.karl,
                 76,
                 "Pilot",
+                "Von oben sieht halt alles klein aus.",
                 mutableListOf(
                     Beitrag(
                         5,
@@ -135,7 +139,7 @@ class Repository {
                         264,
                         "Frankfurt",
                         "380",
-                        "Lufthansa 380 auf den weg zur Rollbahn.",
+                        "Lufthansa 380 auf den weg zur Rollbahn. #Airbus #FRA #380 #Lufthansa",
                         mutableListOf()
                     )
                 )
@@ -148,6 +152,7 @@ class Repository {
                 R.drawable.hanna,
                 298,
                 "Ich bin Ramp Agent am MUC.",
+                "22 aus Dresden",
                 mutableListOf(
                     Beitrag(
                         6,
@@ -168,6 +173,7 @@ class Repository {
                 R.drawable.carla,
                 187,
                 "Ich arbeite als Fluglotse in Dubai.",
+                "Ich geh mal kurz die Welt Retten.",
                 mutableListOf(
                     Beitrag(
                         7,
@@ -175,7 +181,7 @@ class Repository {
                         834,
                         "Dubai",
                         "380",
-                        "Ich bin in Dubai angekommen. #380 #Airport #Dubai",
+                        "Ich bin in Dubai angekommen. #380 #Airport #Dubai #Emirates",
                         mutableListOf()
                     )
                 )
