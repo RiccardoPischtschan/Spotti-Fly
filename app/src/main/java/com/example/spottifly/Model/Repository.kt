@@ -21,16 +21,34 @@ class Repository {
                         20,
                         "München",
                         "319",
-                        "Ein 319ner beim Duschen",
+                        "Ein 319ner beim Duschen. #Enteisung #319",
                         mutableListOf()
                     ),
                     Beitrag(
                         2,
                         R.drawable.ac_3,
                         30,
-                        "Madrid",
+                        "München",
                         "Cessna",
                         "Mini Flieger im V1 abgestellt",
+                        mutableListOf()
+                    ),
+                    Beitrag(
+                        8,
+                        R.drawable.ac_8,
+                        312,
+                        "München",
+                        "Doppeldecker",
+                        "Mini Flieger im V1 abgestellt. #Doppeldecker #MUC",
+                        mutableListOf()
+                    ),
+                    Beitrag(
+                        9,
+                        R.drawable.ac_9,
+                        30,
+                        "München",
+                        "340-600",
+                        "Mein Feierabend Flieger. Noch schnell den 340 gepusht. ;) #MUC #340-600 #Airbus",
                         mutableListOf()
                     )
                 )
@@ -48,9 +66,9 @@ class Repository {
                         3,
                         R.drawable.ac_1,
                         50,
-                        "München",
+                        "Madrid",
                         "747",
-                        "Das ist eine 747 in freier Wildbahn",
+                        "Das ist eine 747 in freier Wildbahn. :) #747 #Madid #MAD",
                         mutableListOf()
                     )
                 )
@@ -70,7 +88,7 @@ class Repository {
                         345,
                         "London",
                         "787-300",
-                        "Ne 787 mit Star Wars Lackierung",
+                        "Ne 787 mit Star Wars Lackierung. #StarWars #LHR",
                         mutableListOf()
                     )
                 )
@@ -90,7 +108,7 @@ class Repository {
                         264,
                         "Frankfurt",
                         "380",
-                        "Lufthansa 380 auf den weg zur Rollbahn",
+                        "Lufthansa 380 auf den weg zur Rollbahn.",
                         mutableListOf()
                     )
                 )
@@ -111,6 +129,26 @@ class Repository {
                         "München",
                         "340-600",
                         "Mein erster 340er als Ramp Agent",
+                        mutableListOf()
+                    )
+                )
+            ),
+            User(
+                6,
+                "Carla",
+                "carla@gmail.com",
+                "carla 187",
+                R.drawable.carla,
+                187,
+                mutableListOf(),
+                mutableListOf(
+                    Beitrag(
+                        7,
+                        R.drawable.ac_7,
+                        834,
+                        "Dubai",
+                        "380",
+                        "Ich bin in Dubai angekommen. #380 #Airport #Dubai",
                         mutableListOf()
                     )
                 )
