@@ -50,6 +50,33 @@ class Repository {
                         "340-600",
                         "Mein Feierabend Flieger. Noch schnell den 340 gepusht. ;) #MUC #340-600 #Airbus",
                         mutableListOf()
+                    ),
+                    Beitrag(
+                        10,
+                        R.drawable.ac_10,
+                        411,
+                        "München",
+                        "787-Dreamliner",
+                        "Der Dreamliner von Etihad mit sonderlackierung. #Etihad #Dreamliner",
+                        mutableListOf()
+                    ),
+                    Beitrag(
+                        11,
+                        R.drawable.ac_11,
+                        45,
+                        "München",
+                        "787-Dreamliner",
+                        "Air Canada Dreamliner aus dem Enteiser Fotografiert. #Dreamliner #AirCanada #MUC",
+                        mutableListOf()
+                    ),
+                    Beitrag(
+                        12,
+                        R.drawable.ac_12,
+                        396,
+                        "München",
+                        "CRJ-700",
+                        "Die CRJ abholen vom Tribwerkstestaus der Lärmschutzhalle. #CRJ #München #Aircraft",
+                        mutableListOf()
                     )
                 )
             ),
